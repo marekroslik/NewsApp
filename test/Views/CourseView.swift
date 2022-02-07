@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct CourseView: View {
+    
     var namespace: Namespace.ID
     @Binding var show: Bool
+    
+    @Binding var title: String
+    @Binding var content: String
+    @Binding var urlToImage: String
+    
     var body: some View {
         ZStack {
             ScrollView {
@@ -31,7 +37,6 @@ struct CourseView: View {
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topTrailing)
             .padding(20)
-            .ignoresSafeArea()
         }
     }
     
@@ -45,10 +50,18 @@ struct CourseView: View {
         .frame(height: 500)
         .foregroundStyle(.black)
         .background(
-            Image("Illustration 9")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .matchedGeometryEffect(id: "image", in: namespace)
+            
+            AsyncImage(url: URL(string: urlToImage)) { image in
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .matchedGeometryEffect(id: "image", in: namespace)
+                
+                
+            } placeholder: {
+                ProgressView()
+            }
+        
         )
         .background(
             Image("Background 5")
@@ -62,27 +75,15 @@ struct CourseView: View {
     )
         .overlay(
             VStack(alignment: .leading, spacing: 12) {
-                Text("Swift UI")
-                    .font(.largeTitle.weight(.bold))
+                Text(title)
+                    .font(.title.weight(.bold))
                     .matchedGeometryEffect(id: "title", in: namespace)
                     .frame(maxWidth: .infinity, alignment: .leading)
-                Text("Text 1".uppercased())
+                Text(content)
                     .font(.footnote.weight(.semibold))
                     .matchedGeometryEffect(id: "subtitle", in: namespace)
-                Text("Text 2")
-                    .font(.footnote).matchedGeometryEffect(id: "text", in: namespace)
-                Divider()
-                HStack {
-                    Image("Avatar Default")
-                        .resizable()
-                        .frame(width: 26, height: 26)
-                        .cornerRadius(10)
-                        .padding(8)
-                        .background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 18, style: .continuous))
-                        .strokeStyle(cornerRadius: 18)
-                    Text("Text 3")
-                        .font(.footnote)
-                }
+                    .lineLimit(nil)
+               
             }
                 .padding(20)
                 .background(
@@ -100,6 +101,6 @@ struct CourseView: View {
 struct CourseView_Previews: PreviewProvider {
     @Namespace static var namespace
     static var previews: some View {
-        CourseView(namespace: namespace, show: .constant(true))
+        CourseView(namespace: namespace, show: .constant(true), title: .constant("Title"), content: .constant("Content"), urlToImage: .constant(""))
     }
 }

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct TabBar: View {
-    @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @AppStorage("selectedTab") var selectedTab: Tab = .news
     @State var color: Color = .teal
     @State var tabItemWidth: CGFloat = 0
     
@@ -67,43 +67,36 @@ struct TabBar: View {
     
     var background: some View {
         HStack {
-            if selectedTab == .library { Spacer() }
-            if selectedTab == .explore { Spacer() }
-            if selectedTab == .notifications {
-                Spacer()
-                Spacer()
-            }
-            Circle().fill(color).frame(width: tabItemWidth)
-            if selectedTab == .home { Spacer() }
+            
             if selectedTab == .explore {
                 Spacer()
                 Spacer()
+                Spacer()
+                
             }
-            if selectedTab == .notifications { Spacer() }
+            Circle().fill(color).frame(width: tabItemWidth)
+            
+            if selectedTab == .news { Spacer() }
         }
         .padding(.horizontal, 8)
     }
     
     var overlay: some View {
         HStack {
-            if selectedTab == .library { Spacer() }
-            if selectedTab == .explore { Spacer() }
-            if selectedTab == .notifications {
+            if selectedTab == .explore {
+                Spacer()
                 Spacer()
                 Spacer()
             }
             Rectangle()
                 .fill(color)
-                .frame(width: 28, height: 5)
+                .frame(width: 30, height: 5)
                 .cornerRadius(3)
                 .frame(width: tabItemWidth)
                 .frame(maxHeight: .infinity, alignment: .top)
-            if selectedTab == .home { Spacer() }
-            if selectedTab == .explore {
-                Spacer()
-                Spacer()
-            }
-            if selectedTab == .notifications { Spacer() }
+            if selectedTab == .news { Spacer() }
+           
+            
         }
         .padding(.horizontal, 8)
     }

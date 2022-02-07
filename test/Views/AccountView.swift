@@ -10,6 +10,8 @@ import SwiftUI
 struct AccountView: View {
     @State var isDeleted = false
     @State var isPinned = false
+    @Binding var isPresented: Bool
+    
     
     var body: some View {
         NavigationView {
@@ -21,7 +23,15 @@ struct AccountView: View {
                 links
             }
             .listStyle(.insetGrouped)
-            .navigationTitle("Account")
+            .navigationBarItems(trailing: Button(action: {
+                isPresented = false
+            }, label: {
+                Image(systemName: "xmark")
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    .padding(8)
+                    .background(.ultraThinMaterial, in: Circle())
+            }))
         }
     }
     
@@ -35,20 +45,20 @@ struct AccountView: View {
                 .padding()
                 .background(Circle().fill(.ultraThinMaterial))
                 .background(
-                    HexagonView()
-                        .offset(x: -50, y: -100)
+                    BlobView()
+                        .offset(x: -250, y: -100)
                 )
                 .background(
                     BlobView()
-                        .offset(x: 200, y: 0)
+                        .offset(x: 350, y: 0)
                         .scaleEffect(0.6)
                 )
-            Text("Meng To")
+            Text("Marek Rosik")
                 .font(.title.weight(.semibold))
             HStack {
                 Image(systemName: "location")
                     .imageScale(.large)
-                Text("Canada")
+                Text("Belarus")
                     .foregroundColor(.secondary)
             }
         }
@@ -58,13 +68,13 @@ struct AccountView: View {
     
     var menu: some View {
         Section {
-            NavigationLink(destination: HomeView()) {
+            NavigationLink(destination: Text("Setting")) {
                 Label("Settings", systemImage: "gear")
             }
             NavigationLink { Text("Billing") } label: {
                 Label("Billing", systemImage: "creditcard")
             }
-            NavigationLink { HomeView() } label: {
+            NavigationLink { Text("Help") } label: {
                 Label("Help", systemImage: "questionmark")
             }
         }
@@ -76,7 +86,7 @@ struct AccountView: View {
     var links: some View {
         Section {
             if !isDeleted {
-                Link(destination: URL(string: "https://apple.com")!) {
+                Link(destination: URL(string: "https://youtube.com")!) {
                     HStack {
                         Label("Website", systemImage: "house")
                         Spacer()
@@ -122,6 +132,6 @@ struct AccountView: View {
 
 struct AccountView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountView(isPresented: .constant(true))
     }
 }

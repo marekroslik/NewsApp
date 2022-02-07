@@ -16,17 +16,13 @@ struct TabItem: Identifiable {
 }
 
 var tabItems = [
-    TabItem(text: "Learn Now", icon: "house", tab: .home, color: .teal),
-    TabItem(text: "Explore", icon: "magnifyingglass", tab: .explore, color: .blue),
-    TabItem(text: "Notifications", icon: "bell", tab: .notifications, color: .red),
-    TabItem(text: "Library", icon: "rectangle.stack", tab: .library, color: .pink)
+    TabItem(text: "News", icon: "newspaper", tab: .news, color: .blue),
+    TabItem(text: "Explore", icon: "magnifyingglass", tab: .explore, color: .purple)
 ]
 
 enum Tab: String {
-    case home
+    case news
     case explore
-    case notifications
-    case library
 }
 
 struct TabPreferenceKey: PreferenceKey {

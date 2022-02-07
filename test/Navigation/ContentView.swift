@@ -9,20 +9,16 @@ import SwiftUI
 
 
 struct ContentView: View {
-    @AppStorage("selectedTab") var selectedTab: Tab = .home
+    @AppStorage("selectedTab") var selectedTab: Tab = .news
     
     var body: some View {
         ZStack(alignment: .bottom) {
             
             switch selectedTab {
-            case .home:
+            case .news:
                 HomeView()
             case .explore:
-                AccountView()
-            case .notifications:
-                AccountView()
-            case .library:
-                AccountView()
+                AccountView(isPresented: .constant(true))
             }
             
             TabBar()
@@ -37,9 +33,6 @@ struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             ContentView()
-            ContentView()
-                .preferredColorScheme(.dark)
-                .previewDevice("iPhone 13 mini")
         }
     }
 }

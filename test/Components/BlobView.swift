@@ -50,11 +50,12 @@ struct BlobShape: Shape {
         var path = Path()
         let width = rect.size.width
         let height = rect.size.height
-        path.move(to: CGPoint(x: 0.9923*width, y: 0.42593*height))
-        path.addCurve(to: CGPoint(x: 0.6355*width, y: height), control1: CGPoint(x: 0.92554*width, y: 0.77749*height), control2: CGPoint(x: 0.91864*width, y: height))
-        path.addCurve(to: CGPoint(x: 0.08995*width, y: 0.60171*height), control1: CGPoint(x: 0.35237*width, y: height), control2: CGPoint(x: 0.2695*width, y: 0.77304*height))
-        path.addCurve(to: CGPoint(x: 0.34086*width, y: 0.06324*height), control1: CGPoint(x: -0.0896*width, y: 0.43038*height), control2: CGPoint(x: 0.00248*width, y: 0.23012*height))
-        path.addCurve(to: CGPoint(x: 0.9923*width, y: 0.42593*height), control1: CGPoint(x: 0.67924*width, y: -0.10364*height), control2: CGPoint(x: 1.05906*width, y: 0.07436*height))
+        path.move(to: CGPoint(x: 0.32*width, y: -0.102*height))
+        path.addCurve(to: CGPoint(x: 0.193*width, y: 0.282*height), control1: CGPoint(x: 0.363*width, y: 0.029*height), control2: CGPoint(x: 0.311*width, y: 0.193*height))
+        path.addCurve(to: CGPoint(x: -0.219*width, y: 0.307*height), control1: CGPoint(x: 0.075*width, y: 0.372*height), control2: CGPoint(x: -0.109*width, y: 0.388*height))
+        path.addCurve(to: CGPoint(x: -0.314*width, y: -0.09*height), control1: CGPoint(x: -0.328*width, y: 0.226*height), control2: CGPoint(x: -0.363*width, y: 0.048*height))
+        path.addCurve(to: CGPoint(x: 0.003*width, y: -0.328*height), control1: CGPoint(x: -0.266*width, y: -0.228*height), control2: CGPoint(x: -0.133*width, y: -0.327*height))
+        path.addCurve(to: CGPoint(x: 0.32*width, y: -0.102*height), control1: CGPoint(x: 0.139*width, y: -0.329*height), control2: CGPoint(x: 0.277*width, y: -0.232*height))
         path.closeSubpath()
         return path
     }
