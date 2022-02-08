@@ -1,4 +1,6 @@
-#WeatherAPI
+# SwiftUI News App
+
+## Api - newsapi.org
 
 ![alt text](https://github.com/marekroslik/NewsApp/blob/main/Screenshots/1.jpg?)
 
