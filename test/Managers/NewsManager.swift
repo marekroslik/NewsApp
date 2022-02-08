@@ -30,6 +30,7 @@ struct ResponseBody: Decodable {
     let articles: [Article]
     
     struct Article: Decodable {
+        let id = UUID()
         let source: Sourse
         let author: String
         let title: String

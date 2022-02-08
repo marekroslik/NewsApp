@@ -53,17 +53,6 @@ struct HomeView: View {
                                     }
 
                                 }
-                        
-                        
-                        
-                        
-//                        CourseItem(namespace: namespace, show: $show)
-//                            .onTapGesture {
-//                                withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
-//                                    show.toggle()
-//                                }
-//
-//                            }
                     }
                     
                 }
@@ -99,7 +88,6 @@ struct HomeView: View {
     
     var scrollDetection: some View {
         GeometryReader { proxy in
-            //    Text("\(proxy.frame(in: .named("scroll")).minY)")
             Color.clear.preference(key: ScrollPreferenceKeys.self, value: proxy.frame(in: .named("scroll")).minY)
             
         }

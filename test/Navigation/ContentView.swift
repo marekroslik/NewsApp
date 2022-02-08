@@ -18,7 +18,7 @@ struct ContentView: View {
             case .news:
                 HomeView()
             case .explore:
-                AccountView(isPresented: .constant(true))
+                ExploreView()
             }
             
             TabBar()
