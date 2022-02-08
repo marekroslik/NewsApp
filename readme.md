@@ -1,11 +1,11 @@
 #WeatherAPI
 
-![alt text](https://github.com/marekroslik/WeatherAPI/blob/main/Screenshots/1.png)
+![alt text](https://github.com/marekroslik/NewsApp/blob/main/Screenshots/1.jpg?)
 
-![alt text](https://github.com/marekroslik/WeatherAPI/blob/main/Screenshots/2.png)
+![alt text](https://github.com/marekroslik/NewsApp/blob/main/Screenshots/2.jpg?)
 
-![alt text](https://github.com/marekroslik/WeatherAPI/blob/main/Screenshots/3.png)
+![alt text](https://github.com/marekroslik/NewsApp/blob/main/Screenshots/3.jpg?)
 
-![alt text](https://github.com/marekroslik/WeatherAPI/blob/main/Screenshots/4.png)
+![alt text](https://github.com/marekroslik/NewsApp/blob/main/Screenshots/4.jpg?)
 
-![alt text](https://github.com/marekroslik/WeatherAPI/blob/main/Screenshots/5.png)
+![alt text](https://github.com/marekroslik/NewsApp/blob/main/Screenshots/5.jpg?)
