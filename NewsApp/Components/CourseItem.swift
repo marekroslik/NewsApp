@@ -32,8 +32,6 @@ struct CourseItem: View {
         }
         .foregroundStyle(.white)
         .background(
-            
-            
             AsyncImage(url: URL(string: urlToImage)) { image in
                 image
                     .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
